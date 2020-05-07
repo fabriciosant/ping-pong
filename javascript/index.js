@@ -26,6 +26,7 @@ var colidiu = false;
 var meusPontos = 0;
 var pontosOponente = 0;
 
+
 function setup(){
     createCanvas(800, 600);
     //trilha.loop();
@@ -46,7 +47,8 @@ function draw(){
     verificaColisaoRaquete(xRaqueteOponente, yRaqueteOponente);
     incluirPlacar();
     marcaPonto();
-s}
+    verificaPontos();
+}
 
 function mostrarBolinha(){
     circle(xBolinha, yBolinha, diamentro);
@@ -56,6 +58,13 @@ function movimentaBolinha(){
     xBolinha += velocidadeXbolinha;
     yBolinha += velocidadeYbolinha;
 
+}
+
+function verificaPontos(){
+    if(pontosOponente > 3){
+        //alert('VOCE PERDEU!!!');
+        //confirm('Deseja reiniciar a aplicação?')
+    }
 }
 
 function verificaColisaoBordas (){
