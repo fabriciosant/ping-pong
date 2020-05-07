@@ -50,7 +50,9 @@ function draw(){
     verificaPontos();
 }
 
-
+function mostrarBolinha(){
+    circle(xBolinha, yBolinha, diamentro);
+}
 
 function movimentaBolinha(){
     xBolinha += velocidadeXbolinha;
