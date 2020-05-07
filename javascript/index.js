@@ -26,26 +26,6 @@ var colidiu = false;
 var meusPontos = 0;
 var pontosOponente = 0;
 
-//Som do jogo
-var raquete;
-var ponto;
-var trilha;
-
-var chanceDeErrar = 0;
-
-var tela = document.querySelector("button");
-
-function iniciaJogo(){
-    
-}
-
-
-function preLoad(){
-    trilha = loadSound("./trilha.mp3");
-    ponto = loadSound("./ponto.mp3");
-    raquetada = loadSound("./raquetada.mp3");
-}
-
 function setup(){
     createCanvas(800, 600);
     //trilha.loop();
@@ -55,7 +35,7 @@ function setup(){
 function draw(){
     background(0);
     mostrarBolinha();
-    //movimentaBolinha();
+    movimentaBolinha();
     verificaColisaoBordas();
     mostraRaquete(xRaquete, yRaquete);
     movimentaRaquete();
@@ -66,8 +46,7 @@ function draw(){
     verificaColisaoRaquete(xRaqueteOponente, yRaqueteOponente);
     incluirPlacar();
     marcaPonto();
-    verificaPontos();
-}
+s}
 
 function mostrarBolinha(){
     circle(xBolinha, yBolinha, diamentro);
@@ -77,13 +56,6 @@ function movimentaBolinha(){
     xBolinha += velocidadeXbolinha;
     yBolinha += velocidadeYbolinha;
 
-}
-
-function verificaPontos(){
-    if(pontosOponente > 3){
-        //alert('VOCE PERDEU!!!');
-        //confirm('Deseja reiniciar a aplicação?')
-    }
 }
 
 function verificaColisaoBordas (){
